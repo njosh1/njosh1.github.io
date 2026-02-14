@@ -1,208 +1,108 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
-
-/* Global Styles */
-* {
-  box-sizing: border-box;
-}
+/* ===== GLOBAL ===== */
 
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.7;
-  color: #333;
-  background-color: #fafafa;
-  padding: 2rem;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fb;
+  color: #222;
+  line-height: 1.6;
 }
 
-/****************   Navigation   **********************/
+/* Accent color */
+:root {
+  --accent: #3b82f6;
+}
+
+/* ===== NAV ===== */
+
 nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #e0e0e0;
-  margin-bottom: 2rem;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid var(--accent);
 }
 
-nav p {
-  margin: 0;
-  font-weight: 600;
-}
+/* ===== HEADER ===== */
 
-nav a {
-  text-decoration: none;
-  color: #2a6df4;
-  font-weight: 500;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-/****************   Header / Splash   **********************/
 header {
+  padding: 2.5rem 2rem;
   text-align: center;
   background-color: #ffffff;
-  padding: 2.5rem 1rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-  margin-bottom: 2rem;
 }
 
 header h1 {
-  margin-bottom: 1rem;
-  font-size: 2.2rem;
+  color: var(--accent);
 }
 
 header img {
+  border: 3px solid var(--accent);
   border-radius: 50%;
-  border: 3px solid #ddd;
 }
 
-/****************   Intro Text   **********************/
-.address {
-  text-align: center;
-  font-style: italic;
-  color: #555;
-  margin: 1.5rem 0 0.5rem;
-}
+/* ===== SECTIONS ===== */
 
-.tagline {
-  text-align: center;
-  font-weight: 500;
-  color: #444;
-  max-width: 800px;
-  margin: 0 auto 2rem;
-}
-
-/****************   Section Styling   **********************/
 section {
-  background-color: #ffffff;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  padding: 2.5rem 2rem;
+  max-width: 900px;
+  margin: auto;
 }
 
 section h3 {
-  margin-top: 0;
+  color: var(--accent);
   margin-bottom: 1rem;
-  color: #222;
-  font-weight: 600;
-  border-bottom: 2px solid #eaeaea;
-  padding-bottom: 0.5rem;
 }
 
-section dl {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.5rem 1.5rem;
-}
+/* ===== LINKS ===== */
 
-section ul {
-  padding-left: 1.25rem;
-}
-
-section li {
-  margin-bottom: 0.5rem;
-}
-
-section a {
-  color: #2a6df4;
+a {
+  color: var(--accent);
   text-decoration: none;
-  font-weight: 500;
+  transition: 0.3s ease;
 }
 
-section a:hover {
+a:hover {
   text-decoration: underline;
+  opacity: 0.8;
 }
 
-/****************   Divider   **********************/
-hr {
-  border: none;
-  height: 1px;
-  background-color: #e0e0e0;
-  margin: 3rem 0;
+/* ===== SKILLS FIX (removes white space issue) ===== */
+
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
 }
 
-/****************   Projects   **********************/
-.three-col {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+#skills li {
+  background-color: #eaf2ff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.2s ease;
 }
 
-.card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+#skills li:hover {
+  background-color: var(--accent);
+  color: white;
 }
 
-.card:hover {
+/* ===== CARD HOVER EFFECT (Creativity without JS) ===== */
+
+.card, .project, .experience {
+  transition: 0.2s ease;
+}
+
+.card:hover, .project:hover, .experience:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
 }
 
-.card h3 {
-  margin-top: 0;
-}
+/* ===== FOOTER ===== */
 
-.card img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-/****************   Footer   **********************/
 footer {
   text-align: center;
-  margin-top: 3rem;
-  padding-top: 1rem;
-  border-top: 1px solid #e0e0e0;
-  font-size: 0.9rem;
-}
-
-footer a {
-  color: #2a6df4;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/****************   Contact Page   **********************/
-.one-col {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-input,
-textarea {
-  padding: 0.6rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-family: 'Montserrat', sans-serif;
-}
-
-/****************   Responsive   **********************/
-@media (max-width: 768px) {
-  body {
-    padding: 1rem;
-  }
-
-  .three-col {
-    grid-template-columns: 1fr;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: flex-start;
-  }
+  padding: 1.5rem;
+  background-color: white;
+  border-top: 2px solid var(--accent);
 }
