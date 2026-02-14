@@ -106,3 +106,22 @@ footer {
   background-color: white;
   border-top: 2px solid var(--accent);
 }
+
+/* ===== SECTION DIVIDERS ===== */
+
+section {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+}
+
+/* Divider line between sections */
+section:not(:last-child)::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 80%;
+  margin: 3rem auto 0 auto;
+  background: linear-gradient(to right, transparent, #d1d5db, transparent);
+}
